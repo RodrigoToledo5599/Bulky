@@ -5,6 +5,10 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BulkyWeb", "BulkyWeb\BulkyWeb.csproj", "{BC1007C3-FAFE-4A12-BE59-7D63D768F618}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.Data", "Bulky.Data\Bulky.Data.csproj", "{47411243-45F5-4BC8-B1B8-3B1EDE02EBF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bulky.Models", "Bulky.Models\Bulky.Models.csproj", "{F087D2CE-6E77-4FA5-A5D4-416E51FA1BD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{BC1007C3-FAFE-4A12-BE59-7D63D768F618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC1007C3-FAFE-4A12-BE59-7D63D768F618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC1007C3-FAFE-4A12-BE59-7D63D768F618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47411243-45F5-4BC8-B1B8-3B1EDE02EBF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47411243-45F5-4BC8-B1B8-3B1EDE02EBF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47411243-45F5-4BC8-B1B8-3B1EDE02EBF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47411243-45F5-4BC8-B1B8-3B1EDE02EBF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F087D2CE-6E77-4FA5-A5D4-416E51FA1BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F087D2CE-6E77-4FA5-A5D4-416E51FA1BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F087D2CE-6E77-4FA5-A5D4-416E51FA1BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F087D2CE-6E77-4FA5-A5D4-416E51FA1BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
