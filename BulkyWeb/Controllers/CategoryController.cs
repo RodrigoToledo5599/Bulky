@@ -80,11 +80,20 @@ namespace BulkyWeb.Controllers
         }
 
 
-		#endregion
+        #endregion
+
+        #region Details
+        public IActionResult Details()
+        {
+            return View();
+        }
+
+
+        #endregion
 
 
 
 
 
-	}
+    }
 }
