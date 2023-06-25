@@ -1,0 +1,13 @@
+﻿@model Category
+@{
+}
+<a asp-action="Index">voltar para o menu principal</a>
+<br>
+<br>
+<form method="post">
+	<p>Id: @Model.Id</p>
+	<p>Name: @Model.Name</p>
+	<p>DisplayOrder: @Model.DisplayOrder</p>
+
+	<button asp-action="Delete" type="submit">Deletar</button>
+</form>

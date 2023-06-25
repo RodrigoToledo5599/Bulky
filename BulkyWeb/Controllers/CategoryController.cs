@@ -47,7 +47,21 @@ namespace BulkyWeb.Controllers
 
 		#region Delete
 
+        public IActionResult Delete(int id) 
+        {
+            Category = _db.Category.FirstOrDefault(c => c.Id == id);
+            return View(Category);
+        }
 
+        [HttpPost]
+        public IActionResult Delete(Category category) 
+        {
+            _db.Remove(category);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+		#endregion
 
 
 
