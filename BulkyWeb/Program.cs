@@ -1,3 +1,4 @@
+using BulkyWeb.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BulkyWeb
@@ -8,7 +9,7 @@ namespace BulkyWeb
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<>(options =>
+            builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
             builder.Services.AddControllersWithViews();
 

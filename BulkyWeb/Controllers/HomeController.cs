@@ -23,7 +23,8 @@ namespace BulkyWeb.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            categories = _db.Category.ToList();
+            return View(categories);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
