@@ -63,6 +63,24 @@ namespace BulkyWeb.Controllers
 
 		#endregion
 
+		#region Edit
+        public IActionResult Edit(int id)
+        {
+            Category category = _db.Category.FirstOrDefault(c => c.Id == id);
+            return View(category); 
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Category category) 
+        {
+            _db.Update(category);
+            _db.SaveChanges();
+            return View(category);
+
+        }
+
+
+		#endregion
 
 
 

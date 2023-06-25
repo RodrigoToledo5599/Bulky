@@ -1,5 +1,35 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model Category
+
+
 @{
 }
+
+
+<a asp-action="Index">voltar para o menu principal</a>
+<br>
+<br>
+
+<h1>Editando categoria</h1>
+
+<form method="post">
+
+
+	<div class="row">
+		<label asp-for="Name" class="p-0">Nome</label>
+		<input asp-for="Name" class="form-control">
+		<span asp-validation-for="Id" class="text-danger"></span>
+	</div>
+	<br>
+
+	<div class="row">
+		<label asp-for="DisplayOrder" class="p-0">Ordem</label>
+		<input asp-for="DisplayOrder" class="form-control">
+		<span asp-validation-for="DisplayOrder" class="text-danger"></span>
+	</div>
+	<br>
+
+	<div class="row button ">
+		<button asp-action="Edit">Salvar Mudanças</button>
+	</div>
+
+</form>
