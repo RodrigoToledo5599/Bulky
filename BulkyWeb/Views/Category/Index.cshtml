@@ -1,0 +1,49 @@
+﻿@model List<Category>
+@{
+
+}
+
+
+
+<p>
+    <a asp-action="Create">Nova categoria</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <h1>Id</h1>
+            </th>
+            <th>
+                <h1>Name</h1>
+            </th>
+            <th>
+                <h1>DisplayOrder</h1>
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisplayOrder)
+                </td>
+                
+                <td>
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id  }) |
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Excluir", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
