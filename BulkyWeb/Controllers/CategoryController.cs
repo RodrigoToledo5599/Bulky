@@ -10,6 +10,8 @@ namespace BulkyWeb.Controllers
         public List<Category> categories { get; set; }
         public Category Category { get; set; }
 
+        public bool Revert  { get; set; }
+
         public CategoryController(AppDbContext db) 
         {
             _db = db;
@@ -91,7 +93,35 @@ namespace BulkyWeb.Controllers
 
         #endregion
 
+        #region RevertList
 
+        [HttpPost]
+        public IActionResult RevertList()
+        {
+            Reverter();
+            return View(categories);
+        }
+
+        public void Reverter()
+        {
+            Revert = false;
+
+            if(Revert == false)
+            {
+                categories = _db.Category.OrderBy(c => c.DisplayOrder).ToList();
+            }
+            else if (Revert == true)
+            {
+                categories = _db.Category.OrderByDescending(c => c.DisplayOrder).ToList();
+            }
+
+
+        }
+
+
+
+
+        #endregion
 
 
 
