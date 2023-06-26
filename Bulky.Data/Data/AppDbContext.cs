@@ -25,12 +25,6 @@ namespace BulkyBookWeb.Data
                 new Category { Id =11, Name = "Zombie Apocalipse", DisplayOrder=11},
                 new Category { Id =12, Name = "Horror", DisplayOrder=12}
                 
-                
-                
-                
-                
-                
-                
                 );
         }
 
