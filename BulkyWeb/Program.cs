@@ -1,9 +1,9 @@
-using Bulky.Data.Repository;
-using Bulky.Data.Repository.IRepository;
-using BulkyWeb.Data;
+using BulkyBook.Data.Repository;
+using BulkyBook.Data.Repository.IRepository;
+using BulkyBookWeb.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace BulkyWeb
+namespace BulkyBookWeb
 {
     public class Program
     {

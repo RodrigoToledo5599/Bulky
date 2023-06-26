@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bulky.Models;
+using BulkyBook.Models;
 
-namespace Bulky.Data.Repository.IRepository
+namespace BulkyBook.Data.Repository.IRepository
 {
     public interface ICategoryRepository : IRepository<Category>
     {

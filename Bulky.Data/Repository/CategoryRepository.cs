@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Bulky.Data.Repository.IRepository;
-using Bulky.Models;
-using BulkyWeb.Data;
+using BulkyBook.Data.Repository.IRepository;
+using BulkyBook.Models;
+using BulkyBookWeb.Data;
 
-namespace Bulky.Data.Repository
+namespace BulkyBook.Data.Repository
 {
     public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
