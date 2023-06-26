@@ -1,4 +1,5 @@
 ﻿
+using Bulky.Data.Repository.IRepository;
 using Bulky.Models;
 using BulkyWeb.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -7,18 +8,18 @@ namespace BulkyWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        public AppDbContext _db { get;set; }
-        public List<Category> categories { get; set; }
-        public Category Category { get; set; }
+        public ICategoryRepository _db { get;set; }
+        public IEnumerable<Category> categories { get; set; }
+        //public Category Category { get; set; }
 
-        public CategoryController(AppDbContext db) 
+        public CategoryController(ICategoryRepository db) 
         {
             _db = db;
         }
         #region Index
         public IActionResult Index()
         {
-            categories = _db.Category.ToList();
+            categories = _db.GetAll();
             return View(categories);
         }
 
@@ -36,8 +37,9 @@ namespace BulkyWeb.Controllers
         {
             if(ModelState.IsValid)
             {
-                _db.Category.Add(category);
-                _db.SaveChanges();
+                _db.Add(category);
+                _db.Save();
+                
                 return RedirectToAction("Index");
             }
             else
@@ -50,15 +52,16 @@ namespace BulkyWeb.Controllers
 
         public IActionResult Delete(int id) 
         {
-            Category = _db.Category.FirstOrDefault(c => c.Id == id);
+            var Category = _db.Get(c => c.Id == id);
             return View(Category);
         }
 
-        [HttpPost]
-        public IActionResult Delete(Category category) 
+        [HttpPost,ActionName("Delete")]
+        public IActionResult DeletePost(int id) 
         {
-            _db.Remove(category);
-            _db.SaveChanges();
+            var Category = _db.Get(c => c.Id == id);
+            _db.Remove(Category);
+            _db.Save();
             return RedirectToAction("Index");
         }
 
@@ -67,7 +70,7 @@ namespace BulkyWeb.Controllers
 		#region Edit
         public IActionResult Edit(int id)
         {
-            Category category = _db.Category.FirstOrDefault(c => c.Id == id);
+            Category category = _db.Get(c => c.Id == id);
             return View(category); 
         }
 
@@ -75,7 +78,7 @@ namespace BulkyWeb.Controllers
         public IActionResult Edit(Category category) 
         {
             _db.Update(category);
-            _db.SaveChanges();
+            _db.Save();
             return View(category);
 
         }
@@ -84,6 +87,7 @@ namespace BulkyWeb.Controllers
         #endregion
 
         #region Details
+        //dps eu faço essa bagaça aq e.e
         public IActionResult Details()
         {
             return View();

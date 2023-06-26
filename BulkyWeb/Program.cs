@@ -1,3 +1,5 @@
+using Bulky.Data.Repository;
+using Bulky.Data.Repository.IRepository;
 using BulkyWeb.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +14,7 @@ namespace BulkyWeb
             builder.Services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             var app = builder.Build();
 
