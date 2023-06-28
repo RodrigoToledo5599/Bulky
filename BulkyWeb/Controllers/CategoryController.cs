@@ -8,18 +8,18 @@ namespace BulkyBookWeb.Controllers
 {
     public class CategoryController : Controller
     {
-        public ICategoryRepository _db { get;set; }
-        public IEnumerable<Category> categories { get; set; }
-        //public Category Category { get; set; }
+        public IUnitOfWork _db { get;set; }
+        //public IEnumerable<Category> categories { get; set; }
+        public Category Category { get; set; }
 
-        public CategoryController(ICategoryRepository db) 
+        public CategoryController(IUnitOfWork db) 
         {
             _db = db;
         }
         #region Index
         public IActionResult Index()
         {
-            categories = _db.GetAll();
+            var categories = _db.Category.GetAll().ToList();
             return View(categories);
         }
 
@@ -37,7 +37,7 @@ namespace BulkyBookWeb.Controllers
         {
             if(ModelState.IsValid)
             {
-                _db.Add(category);
+                _db.Category.Add(category);
                 _db.Save();
                 
                 return RedirectToAction("Index");
@@ -52,15 +52,15 @@ namespace BulkyBookWeb.Controllers
 
         public IActionResult Delete(int id) 
         {
-            var Category = _db.Get(c => c.Id == id);
+            var Category = _db.Category.Get(c => c.Id == id);
             return View(Category);
         }
 
         [HttpPost,ActionName("Delete")]
         public IActionResult DeletePost(int id) 
         {
-            var Category = _db.Get(c => c.Id == id);
-            _db.Remove(Category);
+            var Category = _db.Category.Get(c => c.Id == id);
+            _db.Category.Remove(Category);
             _db.Save();
             return RedirectToAction("Index");
         }
@@ -70,14 +70,14 @@ namespace BulkyBookWeb.Controllers
 		#region Edit
         public IActionResult Edit(int id)
         {
-            Category category = _db.Get(c => c.Id == id);
+            Category category = _db.Category.Get(c => c.Id == id);
             return View(category); 
         }
 
         [HttpPost]
         public IActionResult Edit(Category category) 
         {
-            _db.Update(category);
+            _db.Category.Update(category);
             _db.Save();
             return View(category);
 
@@ -95,10 +95,6 @@ namespace BulkyBookWeb.Controllers
 
 
         #endregion
-
-
-
-
 
     }
 }
