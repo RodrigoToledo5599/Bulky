@@ -1,7 +1,8 @@
 ﻿using System.Diagnostics;
 using BulkyBookWeb.Data;
-using BulkyBook.Models;
+using BulkyBook.Models.Models;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BulkyBookWeb.Areas.Customer.Controllers
 {

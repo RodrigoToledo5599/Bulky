@@ -1,6 +1,6 @@
 ﻿
 using BulkyBook.Data.Repository.IRepository;
-using BulkyBook.Models;
+using BulkyBook.Models.Models;
 using BulkyBookWeb.Data;
 using Microsoft.AspNetCore.Mvc;
 

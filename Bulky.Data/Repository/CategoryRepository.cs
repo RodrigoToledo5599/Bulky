@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BulkyBook.Data.Repository.IRepository;
-using BulkyBook.Models;
+using BulkyBook.Models.Models;
 using BulkyBookWeb.Data;
 
 namespace BulkyBook.Data.Repository
 {
-    public class CategoryRepository : Repository<Category>, ICategoryRepository
+	public class CategoryRepository : Repository<Category>, ICategoryRepository
     {
         private AppDbContext _db;
 
