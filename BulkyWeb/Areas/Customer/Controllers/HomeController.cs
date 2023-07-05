@@ -3,12 +3,13 @@ using BulkyBookWeb.Data;
 using BulkyBook.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BulkyBookWeb.Controllers
+namespace BulkyBookWeb.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        public AppDbContext _db { get; set; }
+        public AppDbContext _db { get; set; }                
         public List<Category> categories { get; set; }
         public HomeController(ILogger<HomeController> logger, AppDbContext db)
         {

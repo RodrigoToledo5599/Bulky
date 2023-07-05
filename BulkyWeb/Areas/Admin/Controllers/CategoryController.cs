@@ -4,15 +4,16 @@ using BulkyBook.Models;
 using BulkyBookWeb.Data;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BulkyBookWeb.Controllers
+namespace BulkyBookWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
-        public IUnitOfWork _db { get;set; }
+        public IUnitOfWork _db { get; set; }
         //public IEnumerable<Category> categories { get; set; }
         public Category Category { get; set; }
 
-        public CategoryController(IUnitOfWork db) 
+        public CategoryController(IUnitOfWork db)
         {
             _db = db;
         }
@@ -35,29 +36,29 @@ namespace BulkyBookWeb.Controllers
         [HttpPost]
         public IActionResult Create(Category category)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _db.Category.Add(category);
                 _db.Save();
-                
+
                 return RedirectToAction("Index");
             }
             else
-                return View(); 
+                return View();
         }
 
-		#endregion
+        #endregion
 
-		#region Delete
+        #region Delete
 
-        public IActionResult Delete(int id) 
+        public IActionResult Delete(int id)
         {
             var Category = _db.Category.Get(c => c.Id == id);
             return View(Category);
         }
 
-        [HttpPost,ActionName("Delete")]
-        public IActionResult DeletePost(int id) 
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePost(int id)
         {
             var Category = _db.Category.Get(c => c.Id == id);
             _db.Category.Remove(Category);
@@ -65,17 +66,17 @@ namespace BulkyBookWeb.Controllers
             return RedirectToAction("Index");
         }
 
-		#endregion
+        #endregion
 
-		#region Edit
+        #region Edit
         public IActionResult Edit(int id)
         {
             Category category = _db.Category.Get(c => c.Id == id);
-            return View(category); 
+            return View(category);
         }
 
         [HttpPost]
-        public IActionResult Edit(Category category) 
+        public IActionResult Edit(Category category)
         {
             _db.Category.Update(category);
             _db.Save();
