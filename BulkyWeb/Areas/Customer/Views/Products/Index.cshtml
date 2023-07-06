@@ -8,7 +8,6 @@
             <th scope="col">Title</th>
             <th scope="col">Price</th>
             <th scope="col">Details</th>
-            <th scope="col">Edit</th>
         </tr>
     </thead>
     <tbody>
@@ -17,8 +16,7 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => prod.Title)</td>
                 <td>@Html.DisplayFor(modelItem => prod.Price)</td>
-                <td><a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Details</a></td>
-                <td><a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Categories List</a></td>
+                <td><a class="nav-link text-dark" asp-area="Customer" asp-controller="Category" asp-action="Index">Details</a></td> 
                 
             </tr>
 

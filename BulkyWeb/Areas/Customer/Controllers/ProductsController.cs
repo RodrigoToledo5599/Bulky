@@ -22,7 +22,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 		public IActionResult Index()
 		{
-			var products = _db.ProductGet.GetAll().ToList();
+			var products = _db.ProductGet.GetAll();
 			return View(products);
 		}
 

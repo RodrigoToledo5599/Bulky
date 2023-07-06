@@ -16,12 +16,14 @@ namespace BulkyBook.Data.Repository
         private AppDbContext _db;
         public ICategoryRepository Category { get; private set; }
         public IProductRepositoryGet ProductGet { get; }
+        public IProductRepository Product { get; set; }
 
         public UnitOfWork(AppDbContext db)
         {
             _db = db;
             Category = new CategoryRepository(_db);
             ProductGet = new ProductRepositoryGet(_db);
+            Product = new ProductRepository(_db);
         }
         public void Save()
         {
