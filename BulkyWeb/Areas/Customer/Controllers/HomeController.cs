@@ -2,7 +2,7 @@
 using BulkyBookWeb.Data;
 using BulkyBook.Models.Models;
 using Microsoft.AspNetCore.Mvc;
-
+using BulkyBookWeb.Data.Data;
 
 namespace BulkyBookWeb.Areas.Customer.Controllers
 {

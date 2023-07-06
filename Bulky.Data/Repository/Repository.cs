@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BulkyBook.Data.Repository.IRepository;
 using BulkyBookWeb.Data;
+using BulkyBookWeb.Data.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BulkyBook.Data.Repository

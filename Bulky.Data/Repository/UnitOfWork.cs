@@ -4,7 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BulkyBook.Data.Repository.IRepository;
+using BulkyBook.Data.RepositoryGet;
+using BulkyBook.Data.RepositoryGet.IRepositoryGet;
 using BulkyBookWeb.Data;
+using BulkyBookWeb.Data.Data;
 
 namespace BulkyBook.Data.Repository
 {
@@ -12,13 +15,13 @@ namespace BulkyBook.Data.Repository
     {
         private AppDbContext _db;
         public ICategoryRepository Category { get; private set; }
-
-        //public ICategoryRepository CategoryRepository => throw new NotImplementedException();
+        public IProductRepositoryGet ProductGet { get; }
 
         public UnitOfWork(AppDbContext db)
         {
             _db = db;
             Category = new CategoryRepository(_db);
+            ProductGet = new ProductRepositoryGet(_db);
         }
         public void Save()
         {

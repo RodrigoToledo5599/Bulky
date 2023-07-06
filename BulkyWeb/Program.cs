@@ -1,6 +1,6 @@
 using BulkyBook.Data.Repository;
 using BulkyBook.Data.Repository.IRepository;
-using BulkyBookWeb.Data;
+using BulkyBookWeb.Data.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace BulkyBookWeb
@@ -35,7 +35,7 @@ namespace BulkyBookWeb
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
+                pattern: "{area=Customer}/{controller=Products}/{action=Index}/{id?}");
 
             app.Run();
         }

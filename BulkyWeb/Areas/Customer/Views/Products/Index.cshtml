@@ -1,0 +1,29 @@
+﻿@model List<Product>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Title</th>
+            <th scope="col">Price</th>
+            <th scope="col">Details</th>
+            <th scope="col">Edit</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var prod in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => prod.Title)</td>
+                <td>@Html.DisplayFor(modelItem => prod.Price)</td>
+                <td><a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Details</a></td>
+                <td><a class="nav-link text-dark" asp-area="Admin" asp-controller="Category" asp-action="Index">Categories List</a></td>
+                
+            </tr>
+
+
+        }
+
+    </tbody>
+</table>

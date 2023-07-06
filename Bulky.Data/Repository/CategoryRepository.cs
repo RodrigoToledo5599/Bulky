@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using BulkyBook.Data.Repository.IRepository;
 using BulkyBook.Models.Models;
 using BulkyBookWeb.Data;
+using BulkyBookWeb.Data.Data;
 
 namespace BulkyBook.Data.Repository
 {
