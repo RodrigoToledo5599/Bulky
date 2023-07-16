@@ -9,7 +9,7 @@ using BulkyBookWeb.Data.Data;
 
 namespace BulkyBook.Data.Repository
 {
-    public class ProductRepository : Repository<Product>, IProductRepository
+	public class ProductRepository : Repository<Product>, IProductRepository
     {
         public AppDbContext _db { get; set; }
 
@@ -18,9 +18,10 @@ namespace BulkyBook.Data.Repository
             _db = db;
         }
 
-        public void Update()
+        public void Update(Product product)
         {
-            _db.SaveChanges();
+            _db.Product.Update(product);
         }
-    }
+
+	}
 }

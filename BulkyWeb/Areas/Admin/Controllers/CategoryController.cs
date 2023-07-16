@@ -75,7 +75,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(category);
         }
 
-        [HttpPost]
         public IActionResult Edit(Category category)
         {
             _db.Category.Update(category);

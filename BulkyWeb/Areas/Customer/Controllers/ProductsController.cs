@@ -8,8 +8,10 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 {
 	[Area("Customer")]
 	[BindProperties]
+
 	public class ProductsController : Controller
 	{
+		//[BindProperty]
 		public IUnitOfWork _db { get; set; }
 		//public Product product { get; set; }
 
@@ -26,10 +28,21 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 			return View(products);
 		}
 
+        #region Details
+        public IActionResult Details(Product product)
+        {
+            return View(product);
+        }
 
-		
+        [HttpPost]
+		public void Details(int id)
+		{
+            var product = _db.Product.Get(c => c.Id == id);
+        }
+
+        #endregion
 
 
 
-	}
+    }
 }
