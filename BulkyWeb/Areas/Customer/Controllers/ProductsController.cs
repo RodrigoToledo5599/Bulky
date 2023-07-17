@@ -11,9 +11,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 
 	public class ProductsController : Controller
 	{
-		//[BindProperty]
+		[BindProperty]
 		public IUnitOfWork _db { get; set; }
-		//public Product product { get; set; }
+		// public Product product { get; set; }
 
 		//public IEnumerable<Product> products { get; set; }
 
@@ -29,15 +29,10 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 		}
 
         #region Details
-        public IActionResult Details(Product product)
+        public IActionResult Details(int? id)
         {
+            Product product = _db.Product.Get(c => c.Id == id);
             return View(product);
-        }
-
-        [HttpPost]
-		public void Details(int id)
-		{
-            var product = _db.Product.Get(c => c.Id == id);
         }
 
         #endregion
