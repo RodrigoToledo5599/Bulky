@@ -13,7 +13,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 	{
 		[BindProperty]
 		public IUnitOfWork _db { get; set; }
-		// public Product product { get; set; }
+		//public Product product { get; set; }
 
 		//public IEnumerable<Product> products { get; set; }
 
@@ -32,6 +32,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
         public IActionResult Details(int? id)
         {
             Product product = _db.Product.Get(c => c.Id == id);
+			if (product == null)
+				return NotFound();
+
             return View(product);
         }
 
