@@ -12,7 +12,6 @@
 
 <form method="post">
 
-
 	<div class="row">
 		<label asp-for="Title" class="p-0">Nome</label>
 		<input asp-for="Title" class="form-control">
@@ -68,9 +67,10 @@
 		<span asp-validation-for="Price100" class="text-danger"></span>
 	</div>
 	<br>
+	<br>
 
-	<div class="row button ">
-		<button asp-action="Create">Criar Produto</button>
-	</div>
+	<button class="btn btn-primary" asp-action="Create">Criar Produto</button>
+	
+	
 
 </form>

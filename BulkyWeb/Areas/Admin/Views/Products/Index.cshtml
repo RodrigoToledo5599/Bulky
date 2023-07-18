@@ -1,16 +1,16 @@
 ﻿@model List<Product>
 
 
-<button class="btn-third"> <a class="nav-link text-dark" asp-area="Admin" asp-controller="Products" asp-action="Create">New Product</a> </button>
+<a asp-action="Create">New Product</a> 
 <br>
 <br>
 <table class="table">
     <thead>
         <tr> 
-            <th scope="col">Title</th>
-            <th scope="col">Price</th>
+            <th scope="col"><h1>Title</h1></th>
+            <th scope="col"><h1>Price</h1></th>
             <th scope="col"></th>
-            <th scope="col">Links</th>
+            <th scope="col"><h1>Links</h1></th>
             <th scope="col"></th>
             
         </tr>
@@ -21,9 +21,9 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => prod.Title)</td>
                 <td>@Html.DisplayFor(modelItem => prod.Price)</td>
-                <td><a class="nav-link text-dark Primary link" asp-area="Admin" asp-controller="Products" asp-action="Details">Details</a></td>
-                <td><a class="nav-link text-dark Primary link" asp-area="Admin" asp-controller="Products" asp-action="Edit">Edit</a></td>
-                <td><a class="nav-link text-dark Primary link" asp-area="Admin" asp-controller="Products" asp-action="Delete">Delete</a></td>
+                <td><a href="/Admin/Products/Details/@prod.Id">Details</a></td>
+                <td><a class="nav-link Primary link" asp-area="Admin" asp-controller="Products" asp-action="Edit">Edit</a></td>
+                <td><a class="nav-link Primary link" asp-area="Admin" asp-controller="Products" asp-action="Delete">Delete</a></td>
 
             </tr>
 

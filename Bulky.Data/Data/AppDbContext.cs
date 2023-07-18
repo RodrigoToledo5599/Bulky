@@ -102,14 +102,22 @@ namespace BulkyBookWeb.Data.Data
 					Price = 23,
 					Price50 = 22,
 					Price100 = 20
-				}
+				},
+                new Product
+                {
+                    Id = 7,
+                    Title = "123",
+                    Author = "123",
+                    Description = "123",
+                    ISBN = "123",
+                    ListPrice = 123,
+                    Price = 123,
+                    Price50 = 123,
+                    Price100 = 123
+                }
 
 
-
-
-
-
-				);
+                );
 
             
         }

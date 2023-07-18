@@ -13,8 +13,8 @@ namespace BulkyBook.Data.Repository
 {
     public class Repository<T> : IRepository<T> where T : class
     {
-        private readonly AppDbContext _db;
-        internal DbSet<T> dbSet;
+        public AppDbContext _db;
+        public DbSet<T> dbSet;
         public Repository(AppDbContext db)
         {
             _db = db;
@@ -30,7 +30,7 @@ namespace BulkyBook.Data.Repository
 
         public T Get(Expression<Func<T, bool>> filter)
         {
-            T value = _db.Set<T>().FirstOrDefault(filter);
+            T value = _db.Set<T>().Where(filter).FirstOrDefault();
             return value;
 
         }

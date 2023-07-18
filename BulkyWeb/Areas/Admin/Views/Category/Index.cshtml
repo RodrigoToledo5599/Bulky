@@ -12,11 +12,14 @@
             <th>
                 <h1>Name</h1>
             </th>
+
             <th>
                 <h1>DisplayOrder</h1>
             </th>
-            
-            <th></th>
+
+            <th>
+                <h1>Options</h1>
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -24,10 +27,10 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    <p>@item.Name</p>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DisplayOrder)
+                    <p>@item.DisplayOrder</p>
                 </td>
                 
                 <td>

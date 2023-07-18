@@ -13,11 +13,11 @@ namespace BulkyBook.Data.RepositoryGet
     public class RepositoryGet<T> : IRepositoryGet<T> where T : class
     {
         public AppDbContext _db { get; set; }
-        //public DbSet<T> dbSet;
+        
         public RepositoryGet(AppDbContext db) 
         {
             _db = db;
-            //this.dbSet = _db.Set<T>();
+            
         } 
         public IEnumerable<T> GetAll()
         {

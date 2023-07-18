@@ -9,27 +9,30 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     public class ProductsController : Controller
     {
         public IUnitOfWork _db { get; set; }
-        //public Product product { get; set; }
-
-        //public IEnumerable<Product> products { get; set; }
-
         public ProductsController(IUnitOfWork db)
         {
             _db = db;
         }
 
+        #region Index
         public IActionResult Index()
         {
             var products = _db.Product.GetAll();
             return View(products);
         }
 
-		#region Details
+        #endregion
 
-		public IActionResult Details(int id)
+        #region Details
+
+        [HttpGet]
+        public IActionResult Details(int id)
         {
 			Product produto = _db.Product.Get(c => c.Id == id);
-			return View(produto);
+            if (produto == null)
+                return NotFound();
+            else
+			    return View(produto);
 		}
 
 
@@ -51,8 +54,52 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             return View(produto);
         }
 
-		#endregion
+        #endregion
 
-	}
+        #region Create
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Product prod) 
+        {
+            if (ModelState.IsValid)
+            {
+                _db.Product.Add(prod);
+                _db.Save();
+                return View(prod);
+            }
+            else
+                return View();
+        }
+
+        #endregion
+
+        #region Delete
+
+        public IActionResult Delete(int id)
+        {
+            var prod = _db.Product.Get(c => c.Id == id);
+            return View(prod);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePost(int id)
+        {
+            var prod = _db.Product.Get(c => c.Id == id);
+            _db.Product.Remove(prod);
+            _db.Save();
+            return RedirectToAction("Index");
+        }
+
+        #endregion
+
+
+
+
+    }
 }
 
