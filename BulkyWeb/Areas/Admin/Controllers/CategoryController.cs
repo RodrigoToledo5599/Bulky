@@ -11,7 +11,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     {
         public IUnitOfWork _db { get; set; }
         //public IEnumerable<Category> categories { get; set; }
-        public Category Category { get; set; }
+        //public Category Category { get; set; }
 
         public CategoryController(IUnitOfWork db)
         {
@@ -74,7 +74,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             Category category = _db.Category.Get(c => c.Id == id);
             return View(category);
         }
-
+        [HttpPost]
         public IActionResult Edit(Category category)
         {
             _db.Category.Update(category);
@@ -87,10 +87,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         #endregion
 
         #region Details
-        //dps eu faço essa bagaça aq e.e
-        public IActionResult Details()
+        
+        public IActionResult Details(int id)
         {
-            return View();
+            Category category = _db.Category.Get(c => c.Id == id);
+            return View(category);
         }
 
 

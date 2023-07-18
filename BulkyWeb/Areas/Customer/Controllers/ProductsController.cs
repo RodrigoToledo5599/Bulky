@@ -1,7 +1,5 @@
 ﻿using BulkyBook.Data.Repository.IRepository;
 using BulkyBook.Models.Models;
-using BulkyBookWeb.Data;
-using BulkyBookWeb.Data.Data;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BulkyBookWeb.Areas.Customer.Controllers
@@ -12,29 +10,27 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
 	public class ProductsController : Controller
 	{
 		public IUnitOfWork _db { get; set; }
-		//public Product product { get; set; }
-
-		//public IEnumerable<Product> products { get; set; }
-
 		public ProductsController(IUnitOfWork db)
 		{
 			_db = db;
 		}
 
-		public IActionResult Index()
+        #region Index
+        public IActionResult Index()
 		{
 			var products = _db.ProductGet.GetAll();
 			return View(products);
 		}
+        #endregion
 
         #region Details
         public IActionResult Details(int? id)
         {
-            Product product = _db.ProductGet.Get(c => c.Id == id);
+			Product product = _db.ProductGet.Get(c => c.Id == id);
 			if (product == null)
 				return NotFound();
-
-            return View(product);
+			else
+				return View(product);
         }
 
         #endregion

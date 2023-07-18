@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Areas\Customer\Views\Products\Details.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.8">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -30,24 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  
-
-  <ItemGroup>
-    <UpToDateCheckInput Remove="Areas\Customer\Views\Products\Details.cshtml" />
-  </ItemGroup>
-
-  
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Areas\Customer\Views\Products\Details.cshtml" />
-  </ItemGroup>
-
-  
-
-  <ItemGroup>
-    <None Include="Areas\Customer\Views\Products\Details.cshtml" />
   </ItemGroup>
 
 </Project>

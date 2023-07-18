@@ -26,7 +26,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
 		#region Details
 
-		[HttpPost, ActionName("Details")]
 		public IActionResult Details(int id)
         {
 			Product produto = _db.Product.Get(c => c.Id == id);

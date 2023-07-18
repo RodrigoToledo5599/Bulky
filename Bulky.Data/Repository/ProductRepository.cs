@@ -12,7 +12,6 @@ namespace BulkyBook.Data.Repository
 	public class ProductRepository : Repository<Product>, IProductRepository
     {
         public AppDbContext _db { get; set; }
-
         public ProductRepository(AppDbContext db) : base(db)
         {
             _db = db;
