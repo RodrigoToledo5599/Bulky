@@ -41,7 +41,8 @@ namespace BulkyBookWeb.Data.Data
 					ListPrice = 99,
 					Price = 90,
 					Price50 = 85,
-					Price100 = 80
+					Price100 = 80,
+					CategoryId = 1
 				},
 				new Product
 				{
@@ -53,7 +54,8 @@ namespace BulkyBookWeb.Data.Data
 					ListPrice = 40,
 					Price = 30,
 					Price50 = 25,
-					Price100 = 20
+					Price100 = 20,
+					CategoryId = 2
 				},
 				new Product
 				{
@@ -65,7 +67,8 @@ namespace BulkyBookWeb.Data.Data
 					ListPrice = 55,
 					Price = 50,
 					Price50 = 40,
-					Price100 = 35
+					Price100 = 35,
+					CategoryId = 1
 				},
 				new Product
 				{
@@ -77,7 +80,8 @@ namespace BulkyBookWeb.Data.Data
 					ListPrice = 70,
 					Price = 65,
 					Price50 = 60,
-					Price100 = 55
+					Price100 = 55,
+					CategoryId = 4
 				},
 				new Product
 				{
@@ -89,7 +93,8 @@ namespace BulkyBookWeb.Data.Data
 					ListPrice = 30,
 					Price = 27,
 					Price50 = 25,
-					Price100 = 20
+					Price100 = 20,
+					CategoryId = 2
 				},
 				new Product
 				{
@@ -101,7 +106,8 @@ namespace BulkyBookWeb.Data.Data
 					ListPrice = 25,
 					Price = 23,
 					Price50 = 22,
-					Price100 = 20
+					Price100 = 20,
+					CategoryId = 7
 				},
                 new Product
                 {
@@ -113,8 +119,9 @@ namespace BulkyBookWeb.Data.Data
                     ListPrice = 123,
                     Price = 123,
                     Price50 = 123,
-                    Price100 = 123
-                }
+                    Price100 = 123,
+					CategoryId = 8
+				}
 
 
                 );
