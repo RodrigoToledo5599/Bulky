@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [BindProperties]
     public class ProductsController : Controller
     {
         public IUnitOfWork _db { get; set; }
@@ -70,7 +69,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             {
                 _db.Product.Add(prod);
                 _db.Save();
-                return View(prod);
+
+                return RedirectToAction("Index");
             }
             else
                 return View();
@@ -82,15 +82,15 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
 
         public IActionResult Delete(int id)
         {
-            var prod = _db.Product.Get(c => c.Id == id);
-            return View(prod);
+            Product produto = _db.Product.Get(c => c.Id == id);
+            return View(produto);
         }
 
         [HttpPost, ActionName("Delete")]
         public IActionResult DeletePost(int id)
         {
-            var prod = _db.Product.Get(c => c.Id == id);
-            _db.Product.Remove(prod);
+            var produto = _db.Product.Get(c => c.Id == id);
+            _db.Product.Remove(produto);
             _db.Save();
             return RedirectToAction("Index");
         }

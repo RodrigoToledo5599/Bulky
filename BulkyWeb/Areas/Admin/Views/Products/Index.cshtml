@@ -1,7 +1,7 @@
 ﻿@model List<Product>
 
 
-<a asp-action="Create">New Product</a> 
+<a href="/Admin/Products/Create">Novo Produto</a>
 <br>
 <br>
 <table class="table">
@@ -22,8 +22,8 @@
                 <td>@Html.DisplayFor(modelItem => prod.Title)</td>
                 <td>@Html.DisplayFor(modelItem => prod.Price)</td>
                 <td><a href="/Admin/Products/Details/@prod.Id">Details</a></td>
-                <td><a class="nav-link Primary link" asp-area="Admin" asp-controller="Products" asp-action="Edit">Edit</a></td>
-                <td><a class="nav-link Primary link" asp-area="Admin" asp-controller="Products" asp-action="Delete">Delete</a></td>
+                <td><a href="/Admin/Products/Edit/@prod.Id">Edit</a></td>
+                <td><a href="/Admin/Products/Delete/@prod.Id">Delete</a></td>
 
             </tr>
 

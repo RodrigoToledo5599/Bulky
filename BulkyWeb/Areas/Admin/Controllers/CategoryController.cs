@@ -10,8 +10,6 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     public class CategoryController : Controller
     {
         public IUnitOfWork _db { get; set; }
-        //public IEnumerable<Category> categories { get; set; }
-        //public Category Category { get; set; }
 
         public CategoryController(IUnitOfWork db)
         {
@@ -74,7 +72,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             Category category = _db.Category.Get(c => c.Id == id);
             return View(category);
         }
-        [HttpPost]
+        [HttpPost,ActionName("Edit")]
         public IActionResult Edit(Category category)
         {
             _db.Category.Update(category);

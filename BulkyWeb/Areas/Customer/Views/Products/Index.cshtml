@@ -5,9 +5,9 @@
 <table class="table table-hover">
     <thead>
         <tr>
-            <th scope="col">Title</th>
-            <th scope="col">Price</th>
-            <th scope="col">Details</th>
+            <th scope="col"><h1>Title</h1></th>
+            <th scope="col"><h1>Price</h1></th>
+            <th scope="col"><h1>Details</h1></th>
         </tr>
     </thead>
     <tbody>
@@ -15,8 +15,8 @@
         @foreach(var prod in Model)
         {
             <tr class="text-primary">
-                <td>@Html.DisplayFor(modelItem => prod.Title)</td>
-                <td>@Html.DisplayFor(modelItem => prod.Price)</td>
+                <td> @prod.Title </td>
+                <td> @prod.Price </td>
                 <td> <a href="/Customer/Products/Details/@prod.Id">Details</a> </td>
             </tr>
         }

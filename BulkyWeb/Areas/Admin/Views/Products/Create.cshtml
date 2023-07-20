@@ -1,9 +1,5 @@
 ﻿@model Product
 
-
-
-
-
 <a asp-action="Index">voltar para o menu principal</a>
 <br>
 <br>
@@ -69,8 +65,8 @@
 	<br>
 	<br>
 
-	<button class="btn btn-primary" asp-action="Create">Criar Produto</button>
-	
-	
+	<button class="btn btn-primary" asp-area="Admin" asp-controller="Products" asp-action="Create">Criar Produto</button>
+
+
 
 </form>

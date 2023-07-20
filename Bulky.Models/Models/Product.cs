@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+
 
 namespace BulkyBook.Models.Models
 {
@@ -59,6 +55,6 @@ namespace BulkyBook.Models.Models
 		[Range(1, 1000)]
 		public double Price100 { get; set; }
 
-
+		
 	}
 }
