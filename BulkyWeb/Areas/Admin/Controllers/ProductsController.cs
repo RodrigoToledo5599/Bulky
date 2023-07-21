@@ -1,5 +1,6 @@
 ﻿using BulkyBook.Data.Repository.IRepository;
 using BulkyBook.Models.Models;
+using BulkyBookWeb.Data.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
@@ -8,17 +9,25 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
     [Area("Admin")]
     public class ProductsController : Controller
     {
+        public AppDbContext _context { get; set; }
         public IUnitOfWork _db { get; set; }
-        public ProductsController(IUnitOfWork db)
+        public ProductsController(IUnitOfWork db, AppDbContext context)
         {
             _db = db;
+            _context = context;
         }
 
         #region Index
         public IActionResult Index()
         {
+            IEnumerable<SelectListItem> selectListItems = _context.Category.ToList()
+                .Select(u => new SelectListItem { 
+                    Value = u.Name,    
+                    Text = u.Id.ToString()
+                });
+            ViewBag.categoria = selectListItems;
 
-            var products = _db.Product.GetAll();
+            var products = _context.Product.ToList();
             return View(products);
         }
 

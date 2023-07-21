@@ -9,6 +9,7 @@
         <tr> 
             <th scope="col"><h1>Title</h1></th>
             <th scope="col"><h1>Price</h1></th>
+            <th scope="col"><h1>Category</h1><th/>
             <th scope="col"></th>
             <th scope="col"><h1>Links</h1></th>
             <th scope="col"></th>
@@ -21,6 +22,13 @@
             <tr>
                 <td>@Html.DisplayFor(modelItem => prod.Title)</td>
                 <td>@Html.DisplayFor(modelItem => prod.Price)</td>
+                @if(prod.CategoryId.ToString() == ViewBag)
+                {
+                    <td>
+                    
+                    </td>
+                }
+
                 <td><a href="/Admin/Products/Details/@prod.Id">Details</a></td>
                 <td><a href="/Admin/Products/Edit/@prod.Id">Edit</a></td>
                 <td><a href="/Admin/Products/Delete/@prod.Id">Delete</a></td>
