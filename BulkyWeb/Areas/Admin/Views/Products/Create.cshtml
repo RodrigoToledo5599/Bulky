@@ -65,7 +65,7 @@
 	<br>
 
 	<div class="row">
-		<select asp-for="CategoryId" asp-items="ViewBag.CategoryList" class="form-select border-0 shadow">
+		<select asp-for="CategoryId" asp-items="@(ViewData["CategoryList"] as IEnumerable<SelectListItem>)" class="form-select border-0 shadow">
 			<option disabled selected>Options</option>
 		</select>
 		@* <label asp-for="CategoryId" class="ms-2 "></label>*@
